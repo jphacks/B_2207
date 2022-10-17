@@ -1,15 +1,21 @@
 # 天気に関するAPIから体感温度を取得
+import sys
+
+sys.path.append("../config")
 
 import json
 from cmath import inf
 
 import requests
+from setting import Setting
 
 ## OpenWeatherMapというAPIを使うことにした
-API_TOKEN = "82b89b1719c61d4f68e481ab07d90feb" # OpenWeatherMapのAPIキー
+#API_TOKEN = "82b89b1719c61d4f68e481ab07d90feb" # OpenWeatherMapのAPIキー
+API_TOKEN = Setting().wapi #環境変数を使う場合（実行する際ディレクトリの場所をconfigの位置に設定しないとエラーが出る）
+#print(API_TOKEN)
 
 
-place = str(input()) # 暫定として47都道府県をターミナルで入力する形を取った
+place =  str(input()) # 暫定として47都道府県をターミナルで入力する形を取った
 if place == "大阪" or place == "京都":
   place += "府"
 elif place == "東京":
@@ -43,5 +49,5 @@ while ret["list"][i]["dt_txt"][5:10] == today: # 取得したデータが今日�
   if min_feel_tmps > float(ret["list"][i]["main"]["feels_like"]):
     min_feel_tmps = ret["list"][i]["main"]["feels_like"]
   i += 1
-#print(min_feel_tmps)
+print(min_feel_tmps)
     
