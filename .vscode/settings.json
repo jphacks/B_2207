@@ -6,7 +6,8 @@
   "extensions.ignoreRecommendations": false,
 
   // ファイルを自動保存する
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay":1,
 
   // デフォルトのフォーマッタを prettier に設定
   "editor.defaultFormatter": "esbenp.prettier-vscode",
