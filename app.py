@@ -10,6 +10,11 @@ from config.setting import Setting
 # load this environment's .env
 
 app = Flask(__name__)
+settings = Setting()
+line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
+handler = WebhookHandler(settings.CHANNEL_SECRET)
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 @app.route("/")
 def hello_world():
@@ -41,9 +46,4 @@ def handle_message(event):
         TextSendMessage(text=event.message.text))
 
 
-settings = Setting()
-line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(settings.CHANNEL_SECRET)
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
 app.run()
