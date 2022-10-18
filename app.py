@@ -11,9 +11,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    cat = os.environ.get("CHANNEL_ACCESS_TOKEN")
-    cs = os.environ.get("CHENNEL_SECRET")
-    return "<p>Hello, World!" + "f{cat[-3:]},{cs[-3:]}" + "</p>"
+    cat = os.environ.get("CHANNEL_ACCESS_TOKEN")[-3:]
+    cs = os.environ.get("CHENNEL_SECRET")[-3:]
+    return "<p>Hello, World! " + cat+','+cs + "</p>"
 
 # @app.route("/callback", methods=['POST'])
 # def callback():
