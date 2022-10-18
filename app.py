@@ -10,16 +10,13 @@ from config.setting import Setting
 # load this environment's .env
 
 app = Flask(__name__)
-settings = Setting()
-line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(settings.CHANNEL_SECRET)
+
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
 
 @app.route("/callback", methods=['POST'])
 def callback():
-  
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
 
@@ -45,6 +42,9 @@ def handle_message(event):
 
 
 if __name__ == "__main__":
+    settings = Setting()
+    line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
+    handler = WebhookHandler(settings.CHANNEL_SECRET)
     dotenv_path = join(dirname(__file__), '.env')
     load_dotenv(dotenv_path)
     app.run()
