@@ -13,8 +13,7 @@ app = Flask(__name__)
 def hello_world():
     cat = os.environ.get("CHANNEL_ACCESS_TOKEN")
     cs = os.environ.get("CHENNEL_SECRET")
-    print(f"{cat = },{ cs = }")
-    return "<p>Hello, World!</p>"
+    return "<p>Hello, World!" + "f{cat[-3:]},{cs[-3:]}" + "</p>"
 
 # @app.route("/callback", methods=['POST'])
 # def callback():
