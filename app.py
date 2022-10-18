@@ -1,6 +1,4 @@
-import os
-from os.path import join, dirname
-from dotenv import load_dotenv
+
 from flask import Flask, abort, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -13,8 +11,7 @@ app = Flask(__name__)
 settings = Setting()
 line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(settings.CHANNEL_SECRET)
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
+
 
 @app.route("/")
 def hello_world():

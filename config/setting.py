@@ -1,9 +1,9 @@
 
 import os
+from os.path import join, dirname
 import firebase_admin
 from dotenv import load_dotenv
 from firebase_admin import credentials, firestore
-
 
 class Setting:
     def __init__(self):
@@ -18,6 +18,8 @@ class Setting:
         # 環境変数から設定値を取得
         # .envに環境変数を追加した場合はSlackで全メンバーに伝えること
         # 以下のhogeのように環境変数を取得する
+        dotenv_path = join(dirname(__file__), '.env')
+        load_dotenv(dotenv_path)
         self.__CHANNEL_ACCESS_TOKEN = os.environ.get("CHANNEL_ACCESS_TOKEN")
         self.__CHANNEL_SECRET = os.environ.get("CHANNEL_SECRET")
 
