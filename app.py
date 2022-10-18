@@ -8,8 +8,6 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 # load this environment's .env
 
 app = Flask(__name__)
-line_bot_api = LineBotApi(os.environ.get("CHANNEL_ACCESS_TOKEN"))
-handler = WebhookHandler(os.environ.get("CHENNEL_SECRET"))
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
@@ -17,6 +15,8 @@ def hello_world():
 @app.route("/callback", methods=['POST'])
 def callback():
 
+    line_bot_api = LineBotApi(os.environ.get("CHANNEL_ACCESS_TOKEN"))
+    handler = WebhookHandler(os.environ.get("CHENNEL_SECRET"))
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
 
