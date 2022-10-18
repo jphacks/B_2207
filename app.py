@@ -1,18 +1,12 @@
-
 from flask import Flask, abort, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
-
-from config.setting import Setting
 # load this environment's .env
 
 app = Flask(__name__)
-settings = Setting()
-line_bot_api = LineBotApi(settings.CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(settings.CHANNEL_SECRET)
-
-
+line_bot_api = LineBotApi("z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=")
+handler = WebhookHandler("a676780a4132f1a41e5cab58d4b17674")
 @app.route("/")
 def hello_world():
     return "<p>Hello, World!</p>"
@@ -43,4 +37,5 @@ def handle_message(event):
         TextSendMessage(text=event.message.text))
 
 
-app.run()
+if __name__ == "__main__":
+    app.run()

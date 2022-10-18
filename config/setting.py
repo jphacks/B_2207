@@ -18,22 +18,22 @@ class Setting:
         # 環境変数から設定値を取得
         # .envに環境変数を追加した場合はSlackで全メンバーに伝えること
         # 以下のhogeのように環境変数を取得する
-        dotenv_path = join(dirname(__file__), '.env')
-        load_dotenv(dotenv_path)
-        self.__CHANNEL_ACCESS_TOKEN = os.environ.get("CHANNEL_ACCESS_TOKEN")
-        self.__CHANNEL_SECRET = os.environ.get("CHANNEL_SECRET")
+        # dotenv_path = join(dirname(__file__), '.env')
+        # load_dotenv(dotenv_path)
+        # self.__CHANNEL_ACCESS_TOKEN = os.environ.get("CHANNEL_ACCESS_TOKEN")
+        # self.__CHANNEL_SECRET = os.environ.get("CHANNEL_SECRET")
 
     @property
     def db(self):
         return self.__db
 
-    @property
-    def CHANNEL_SECRET(self):
-        return self.__CHANNEL_SECRET
+    # @property
+    # def CHANNEL_SECRET(self):
+    #     return self.__CHANNEL_SECRET
 
-    @property
-    def CHANNEL_ACCESS_TOKEN(self):
-        return self.__CHANNEL_ACCESS_TOKEN
+    # @property
+    # def CHANNEL_ACCESS_TOKEN(self):
+    #     return self.__CHANNEL_ACCESS_TOKEN
     # 環境変数を追加したらpropertyにも追加すること
     # これによりsettingで参照できるようになる
     # @property
