@@ -1,4 +1,5 @@
 # 天気に関するAPIから体感温度を取得
+# 実行する際はrootディレクトリから実行すること
 import os
 import sys
 
@@ -12,7 +13,7 @@ from config.setting import Setting
 
 ## OpenWeatherMapというAPIを使うことにした
 #API_TOKEN = "82b89b1719c61d4f68e481ab07d90feb" # OpenWeatherMapのAPIキー
-API_TOKEN = Setting().wapi #環境変数を使う場合（実行する際ディレクトリの場所をconfigの位置に設定しないとエラーが出る）
+API_TOKEN = Setting().wapi #環境変数を使う場合
 #print(API_TOKEN)
 
 # 体感気温の最低気温と最高気温の初期化
