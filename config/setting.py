@@ -10,10 +10,10 @@ from firebase_admin import credentials, firestore
 class Setting:
     def __init__(self):
         # .envから環境変数を読み込む
-        load_dotenv(".env")
+        load_dotenv("./config/.env")
 
         # Firebaseから設定値を取得
-        cred = credentials.Certificate("jphacks-2022-firebase-adminsdk-ijn6v-e2108c052f.json")
+        cred = credentials.Certificate("./config/jphacks-2022-firebase-adminsdk-ijn6v-e2108c052f.json")
         firebase_admin.initialize_app(cred)
         self.__db = firestore.client()
 

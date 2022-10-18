@@ -1,13 +1,14 @@
 # 天気に関するAPIから体感温度を取得
+import os
 import sys
 
-sys.path.append("../config")
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 import json
 from cmath import inf
 
 import requests
-from setting import Setting
+from config.setting import Setting
 
 ## OpenWeatherMapというAPIを使うことにした
 #API_TOKEN = "82b89b1719c61d4f68e481ab07d90feb" # OpenWeatherMapのAPIキー
@@ -64,10 +65,10 @@ def getMaxFeelTmp(): # 体感気温の最高気温を取得
 
 
 # テストコード 
-place = str(input())
-weatherInfo(place, tmp)
-print(getMinFeelTmp())
-print(getMaxFeelTmp())
+# place = str(input()) #都道府県を入力
+# weatherInfo(place, tmp)
+# print(getMinFeelTmp())
+# print(getMaxFeelTmp())
     
 
 

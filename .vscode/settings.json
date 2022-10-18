@@ -19,8 +19,4 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
-  "python.analysis.extraPaths": [
-    "./weather",
-    "./config"
-  ]
 }
