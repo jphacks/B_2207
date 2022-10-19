@@ -7,17 +7,11 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 CONNECT_TIMEOUT,READ_TIMEOUT = 10,60*5
+TIMEDIFF = 9
 app = Flask(__name__)
-subprocess.run(['find','-name','*.env'])
-# load this environment's .env
-# loader = Envloader()
-print(os.environ["CHANNEL_SECRET"] == "a676780a4132f1a41e5cab58d4b17674")
-print(os.environ["CHANNEL_ACCESS_TOKEN"] == "z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=")
-# line_bot_api = LineBotApi("z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=",timeout=1000)
-# handler = WebhookHandler("a676780a4132f1a41e5cab58d4b17674")
-line_bot_api = LineBotApi("z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=",timeout=(CONNECT_TIMEOUT,READ_TIMEOUT))
-handler = WebhookHandler("a676780a4132f1a41e5cab58d4b17674")
-print(f"Read timeout is {datetime.datetime.now() + datetime.timedelta(seconds=READ_TIMEOUT)}!!!")
+line_bot_api = LineBotApi(os.environ["CHANNEL_ACCESS_TOKEN"],timeout=(CONNECT_TIMEOUT,READ_TIMEOUT))
+handler = WebhookHandler(os.environ["CHANNEL_SECRET"])
+print(f"Read timeout is {datetime.datetime.now() + datetime.timedelta(hours = TIMEDIFF,seconds=READ_TIMEOUT)}!!!")
 @app.route("/")
 def hello_world():
     return "<p>ohaohaoha, World!</p>"
