@@ -1,4 +1,5 @@
 import datetime
+import subprocess
 from flask import Flask, abort, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -7,6 +8,7 @@ from config.envloader import Envloader
 
 CONNECT_TIMEOUT,READ_TIMEOUT = 10,60*5
 app = Flask(__name__)
+subprocess.run(['find','-name','*.env'])
 # load this environment's .env
 # loader = Envloader()
 # print(loader.env.channel_secret == "a676780a4132f1a41e5cab58d4b17674")
