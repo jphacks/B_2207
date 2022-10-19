@@ -13,7 +13,7 @@ class Envloader:
   def __new__(cls,*args,**kwards):
     if cls.__instance is None:
       cls.__instance = super().__new__(cls)
-      with open('config/.env','r') as file:
+      with open('./config/.env','r') as file:
         cls.env = EnvDatas.from_dict({line[:(ind:=line.find("="))]:line[ind+1:].rstrip() for line in file if line})
     return cls.__instance
   @property
