@@ -16,7 +16,7 @@ print(s.stdout)
 # line_bot_api = LineBotApi("z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=",timeout=1000)
 # handler = WebhookHandler("a676780a4132f1a41e5cab58d4b17674")
 
-line_bot_api = LineBotApi("z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=")
+line_bot_api = LineBotApi("z+wwUFo23oaC1J9rxPOJY0cyFy7m0pB6ty6D2w077NVXKuVUpthMBTgQpCDQSZyMDF/WjPKHh9AdUHTxo2RutRulMIresZaPLGwN06VyxNVFX/fSjbucMnP0dgtsJnHFu2w/HaEPx3diJeCOJIXW+QdB04t89/1O/w1cDnyilFU=",timeout=(10,60*3))
 handler = WebhookHandler("a676780a4132f1a41e5cab58d4b17674")
 @app.route("/")
 def hello_world():
