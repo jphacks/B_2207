@@ -1,57 +1,34 @@
-# TSPアート
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2022/08/JPHACKS2022_ogp.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)
+## Getting Started
 
-## 製品概要
-「思い出から一つなぎのアートを」アップロードした画像から、一筆書きアートが浮かび上がるWebアプリ
-### 背景(製品開発のきっかけ、課題等）
-自分達の研究分野とプロダクトを繋げたい
+First, run the development server:
 
-→問題設定が分かりやすく、見せ方を工夫できるのはTSP（巡回セールスマン問題）だろう
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-→TSPを用いて何か別のアーティスティックな画像を生み出せたら面白いのではないか
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-こういった思考から画像からアートを生み出すTSPアートサービスを開発しました
-### 製品説明（具体的な製品の説明）
-### 特長
-#### 1. 特長1　巡回セールスマン問題のためのアルゴリズムを今回の製品に取り入れた
-今回は巡回セールスマン問題を解くための2-optというアルゴリズムを使い、画像からアートを浮かび上がらせることに成功した
-#### 2. 特長2　アルゴリズムによってできた画像（完成品）だけでなく、どのように完成されたのかの過程も可視化することでより楽しめる
-画像から自動で頂点を生成し、巡回路が元の画像を浮かび上がらせるアートとなっていく過程がみれる
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-### 解決出来ること
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-画像からメッセージを面白く送信できる
+## Learn More
 
-### 今後の展望
-動画・アニメーションに対応
+To learn more about Next.js, take a look at the following resources:
 
-指定したメッセージを表示できるようにする
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-2-optは解法としては遅いので、より高度なアルゴリズムを用いて高速に解けるようにする
-### 注力したこと（こだわり等）
-* TSPを解くためのアルゴリズム(2-opt)を組み込んだこと
-* 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## 開発技術
-### 活用した技術
-#### API・データ
-* 
-* 
+## Deploy on Vercel
 
-#### フレームワーク・ライブラリ・モジュール
-* firebase
-* Next.js
-* OpenCV
-#### デバイス
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-### 独自技術
-#### ハッカソンで開発した独自機能・技術
-* 
-* 
-
-#### 製品に取り入れた研究内容（データ・ソフトウェアなど）（※アカデミック部門の場合のみ提出必須）
-* 巡回セールスマン問題に対するアルゴリズム
-* 
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
